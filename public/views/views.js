@@ -1,3 +1,20 @@
+$.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+                if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                                o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                } else {
+                        o[this.name] = this.value || '';
+                }
+        });
+        return o;
+};
+
+
 var HomeView = Backbone.View.extend({
 	render: function() {
 		$.get('templates/home.html', function(incomingTemplate){
@@ -23,10 +40,10 @@ var CarouselView = Backbone.View.extend({
 	render: function() {
 
 		var template =    
-		"<div class='item'><a href='#'><img src='img/img1.jpg' alt='img'></a></div>"+
-		"<div class='item'><a href='#'><img src='img/img2.jpg' alt='img'></a></div>"+ 
-		"<div class='item'><a href='#'><img src='img/img3.jpg' alt='img'></a></div>"+
-		"<div class='item'><a href='#'><img src='img/img4.jpg' alt='img'></a></div>";
+		"<div class='item'><a href='#'><img src='img/portfolio-1.jpg' alt='img'></a></div>"+
+		"<div class='item'><a href='#'><img src='img/portfolio-2.jpg' alt='img'></a></div>"+ 
+		"<div class='item'><a href='#'><img src='img/portfolio-3.jpg' alt='img'></a></div>"+
+		"<div class='item'><a href='#'><img src='img/portfolio-4.jpg' alt='img'></a></div>";
 
 		$('#carousel').html(template).trigger('create');
 		$('#carousel').owlCarousel({
@@ -37,6 +54,19 @@ var CarouselView = Backbone.View.extend({
 
 	}
 });
+
+var LoginView = Backbone.View.extend({
+	el: 'body',
+	events: {
+	},
+	render: function() {
+		$.get('templates/login.html', function(incomingTemplate){
+			var template = Handlebars.compile(incomingTemplate);
+			$('#login').html(template).trigger('create');
+		})
+		return this;
+	},
+})
 
 var ServicesView = Backbone.View.extend({
 	render: function() {
