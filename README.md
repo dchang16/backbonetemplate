@@ -1,4 +1,4 @@
-OVERVIEW
+# Overview
 
 Tired of spending hours, days, configuring servers and getting all of your dependencies working in harmony just to setup a simple website?
 
@@ -13,7 +13,7 @@ Backend: Node.js express.js passport.js
 
 DB: mongoDB
 
-Dependecies: 
+## Install 
 
 Download node.js: http://nodejs.org/download/
 
