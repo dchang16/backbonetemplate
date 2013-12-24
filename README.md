@@ -21,5 +21,6 @@ Download mongoDB: http://www.mongodb.org/downloads
 
 ## Getting Started
 
-After downloading the dependecies above, go to your node command prompt and navigate to where your app.js in your project folder is located. 
+After downloading the dependecies above, go to your node command prompt and navigate to where your app.js in your project folder is located 
 * Run: `node app`
+Then go to your favourite browser, and type in localhost: **** port number, default set as 3002
