@@ -3,7 +3,6 @@ var path = require('path'),
     http = require('http'),
     mongoose = require('mongoose'),
     passport = require('passport'),
-	// exphbs = require('express3-handlebars')	
     LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
@@ -18,11 +17,6 @@ var errorHandler = require('express-error-handler'),
 // Configuration
 app.configure(function(){
     app.set('views', __dirname + '/views');
-	// app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-	// app.set('view engine', 'handlebars');
-    // app.set('view options', { layout: false });
-
-   // app.use(express.logger());
     app.use(express.bodyParser());
     app.use(express.methodOverride());
 
@@ -35,8 +29,7 @@ app.configure(function(){
     app.use(app.router);
     app.use(express.static(path.join(__dirname, 'public')));
     app.use('/public', express.static(__dirname + '/public'));
-	// app.use( errorHandler.httpError(404) );
-	// app.use( handler );
+
 });
 
 app.configure('development', function(){
@@ -48,18 +41,18 @@ app.configure('production', function(){
 });
 
 // Configure passport
-// var Account = require('./models/account');
+ var Account = require('./models/account');
 
-// passport.use(new LocalStrategy(Account.authenticate()));
+ passport.use(new LocalStrategy(Account.authenticate()));
 
-// passport.serializeUser(Account.serializeUser());
-// passport.deserializeUser(Account.deserializeUser());
+ passport.serializeUser(Account.serializeUser());
+ passport.deserializeUser(Account.deserializeUser());
 
 // Connect mongoose
 mongoose.connect('mongodb://localhost/ice');
 
 // Setup routes
-// require('./routes')(app);
+require('./routes')(app);
 
 http.createServer(app).listen(3002, '127.0.0.1', function() {
     console.log("Express server listening on %s:%d in %s mode", '127.0.0.1', 3002, app.settings.env);
