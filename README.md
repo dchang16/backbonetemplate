@@ -1,6 +1,6 @@
-Tired of spending hours... days configuring servers and getting all of your dependencies working in harmony?
+Tired of spending hours, days, configuring servers and getting all of your dependencies working in harmony just to setup a simple website?
 
-This web template is designed such that everything is setup for you so you can just simply pull and run it on your node command prompt! 
+This web template is designed such that everything is setup for you so you can just simply pull and run it from your node command prompt! 
 
 
 Frontend: HTML5, CSS, and Javascript/jQuery
