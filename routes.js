@@ -1,6 +1,5 @@
 var passport = require('passport'),
     Account = require('./models/account');
-var login = false;
 module.exports = function (app) {
     
     app.post('/register', function(req, res) {

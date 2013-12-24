@@ -66,7 +66,7 @@ var LoginView = Backbone.View.extend({
 		})
 		return this;
 	},
-})
+});
 
 var ServicesView = Backbone.View.extend({
 	render: function() {
@@ -104,6 +104,6 @@ var FooterView = Backbone.View.extend({
 			$('#footer').html(template).trigger('create');
 		})
 	}
-})
+});
 
 
