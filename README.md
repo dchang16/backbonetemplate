@@ -1,7 +1,13 @@
-Basic Web template that supports basic functionality
+Tired of spending hours... days configuring servers and getting all of your dependencies working in harmony?
 
-Includes:
-Sleek frontend design
-Register and Login functionality with passport
+This web template is designed such that everything is setup for you so you can just simply pull and run it on your node command prompt! 
 
-Uses Backbone.js and Node.js and MongoDB for its database
+
+Frontend: HTML5, CSS, and Javascript/jQuery
+Structure: Backbone.js
+Backend: Node.js express.js passport.js
+DB: mongoDB
+
+Dependecies: 
+Download node.js: http://nodejs.org/download/
+Download mongoDB: http://www.mongodb.org/downloads
